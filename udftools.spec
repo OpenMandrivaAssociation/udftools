@@ -38,7 +38,6 @@ Patch3:		udftools-1.0.0b3cvs_add_cdmrw.patch.bz2
 Patch4:		udftools-1.0.0b3-kernel-2.6.8.1.patch.bz2
 Patch5:         udftools-1.0.0-gcc4.patch
 URL:		http://sourceforge.net/projects/linux-udf/
-BuildRoot:	%{_tmppath}/%{name}-%{version}%{beta}-build
 Requires(post):	rpm-helper
 Requires(preun):rpm-helper
 Requires:	%{libname} = %version-%release
