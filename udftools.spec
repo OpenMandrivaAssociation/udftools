@@ -135,8 +135,8 @@ rm -Rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %attr (0755,root,root) %{_initrddir}/pktcdvd
 %config (noreplace) %{_sysconfdir}/sysconfig/pktcdvd
-%{_mandir}/man1/*.1.bz2
-%{_mandir}/man8/*.8.bz2
+%{_mandir}/man1/*.1*
+%{_mandir}/man8/*.8*
 
 %files -n %{libname}
 %defattr (- ,root,root)
