@@ -96,7 +96,7 @@ perl -pi -e 's! udfct! udfct cdmrw!' Makefile.am
 
 %build
 ACLOCAL=aclocal-1.7 AUTOMAKE=automake-1.7 \
-    autoreconf-2.5x --force --install
+    autoreconf --force --install
 %configure2_5x --enable-shared
 %make
 
