@@ -53,7 +53,7 @@ managing Packet-CD/DVD devices and media.
 
 
 %package -n %{libname}
-Summary:	Libraries from %name.
+Summary:	Libraries from %name
 Group:		System/Libraries
 Provides:	%{libname} = %version-%release
 Provides:	libudftools = %version-%release
@@ -63,7 +63,7 @@ This package contains the libraries meeded by %name.
 
 
 %package -n %{libname}-devel
-Summary:	Devel files from %name.
+Summary:	Devel files from %name
 Group:		Development/C
 Requires:	%{libname} = %version-%release
 Provides:	libudftools-devel = %version-%release
@@ -74,7 +74,7 @@ This is the libraries, include files and other resources you can use
 to incorporate %name into applications.
 
 %package -n %libname-static-devel
-Summary:	Static Library for developing applications with %name.
+Summary:	Static Library for developing applications with %name
 Group:		Development/C
 Requires:	%libname-devel = %version-%release
 Provides:	libudftools-static-devel = %version-%release
