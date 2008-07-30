@@ -4,7 +4,7 @@
 %define version	1.0.0
 %define beta	b3
 %define tarver	%{version}%{beta}cvs20040419
-%define mdkrel	%mkrel 10
+%define mdkrel	%mkrel 12
 
 
 %if %beta
