@@ -33,9 +33,9 @@ Source2:	pktcdvd.sysconfig.bz2
 Source3:	pktcdvd.html.bz2
 Source4:	pktcdvd-hint.txt.bz2
 #Patch1:		udftool}s-%{cvsrelease}.patch.bz2
-Patch2:		udftools-disable_broken.patch.bz2 
-Patch3:		udftools-1.0.0b3cvs_add_cdmrw.patch.bz2
-Patch4:		udftools-1.0.0b3-kernel-2.6.8.1.patch.bz2
+Patch2:		udftools-disable_broken.patch 
+Patch3:		udftools-1.0.0b3cvs_add_cdmrw.patch
+Patch4:		udftools-1.0.0b3-kernel-2.6.8.1.patch
 Patch5:         udftools-1.0.0-gcc4.patch
 URL:		http://sourceforge.net/projects/linux-udf/
 BuildRoot:	%{_tmppath}/%{name}-%{version}%{beta}-build
