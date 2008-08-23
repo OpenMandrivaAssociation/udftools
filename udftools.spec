@@ -40,6 +40,7 @@ Patch3:		udftools-1.0.0b3cvs_add_cdmrw.patch
 Patch4:		udftools-1.0.0b3-kernel-2.6.8.1.patch
 Patch5:         udftools-1.0.0-gcc4.patch
 Patch6:		udftools-open.patch
+Patch7:		udftools-include.patch
 URL:		http://sourceforge.net/projects/linux-udf/
 BuildRoot:	%{_tmppath}/%{name}-%{version}%{beta}-build
 Requires(post):	rpm-helper
@@ -98,6 +99,7 @@ link statically to %name.
 %patch4 -p1 -b .kernel-2.6.8.1
 %patch5 -p1 -b .gcc4
 %patch6 -p0
+%patch7 -p0
 perl -pi -e 's! udfct/Makefile! udfct/Makefile cdmrw/Makefile!' configure.in
 perl -pi -e 's! udfct! udfct cdmrw!' Makefile.am
 
