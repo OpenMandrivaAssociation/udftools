@@ -104,6 +104,7 @@ perl -pi -e 's! udfct/Makefile! udfct/Makefile cdmrw/Makefile!' configure.in
 perl -pi -e 's! udfct! udfct cdmrw!' Makefile.am
 
 %build
+%define _disable_ld_no_undefined 1
 autoreconf --force --install
 %configure2_5x --enable-shared
 %make
