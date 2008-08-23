@@ -15,13 +15,15 @@
 
 %define major 1
 %define libname %mklibname udftools %{major}
+%define develname %mklibname -d udftools
+%define sdevelname %mklibname -d -s udftools
 
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Epoch:		1
-License:	GPL
+License:	GPLv2+
 Group:		System/Kernel and hardware
 Provides:	udf
 Obsoletes:	udf
@@ -37,12 +39,13 @@ Patch2:		udftools-disable_broken.patch
 Patch3:		udftools-1.0.0b3cvs_add_cdmrw.patch
 Patch4:		udftools-1.0.0b3-kernel-2.6.8.1.patch
 Patch5:         udftools-1.0.0-gcc4.patch
+Patch6:		udftools-open.patch
 URL:		http://sourceforge.net/projects/linux-udf/
 BuildRoot:	%{_tmppath}/%{name}-%{version}%{beta}-build
 Requires(post):	rpm-helper
 Requires(preun):rpm-helper
 Requires:	%{libname} = %version-%release
-BuildRequires:	autoconf2.5 automake1.7
+BuildRequires:	autoconf automake
 BuildRequires:	readline-devel
 BuildRequires:  ncurses-devel
 
@@ -62,25 +65,27 @@ Provides:	libudftools = %version-%release
 This package contains the libraries meeded by %name.
 
 
-%package -n %{libname}-devel
+%package -n %{develname}
 Summary:	Devel files from %name
 Group:		Development/C
 Requires:	%{libname} = %version-%release
 Provides:	libudftools-devel = %version-%release
+Provides:	%name-devel = %version-%release
 Provides:	%{libname}-devel = %version-%release
+Obsoletes:	%mklibname -d udftools 1
 
-%description -n %{libname}-devel
+%description -n %{develname}
 This is the libraries, include files and other resources you can use
 to incorporate %name into applications.
 
-%package -n %libname-static-devel
+%package -n %sdevelname
 Summary:	Static Library for developing applications with %name
 Group:		Development/C
-Requires:	%libname-devel = %version-%release
-Provides:	libudftools-static-devel = %version-%release
-Provides:	%{libname}-static-devel = %version-%release
+Requires:	%develname = %epoch:%version-%release
+Provides:	udftools-static-devel = %version-%release
+Obsoletes:	%mklibname -d -s udftools 1
 
-%description -n %libname-static-devel
+%description -n %sdevelname
 This contains the static library of %name needed for building apps that
 link statically to %name.
 
@@ -92,12 +97,12 @@ link statically to %name.
 %patch3 -p1
 %patch4 -p1 -b .kernel-2.6.8.1
 %patch5 -p1 -b .gcc4
+%patch6 -p0
 perl -pi -e 's! udfct/Makefile! udfct/Makefile cdmrw/Makefile!' configure.in
 perl -pi -e 's! udfct! udfct cdmrw!' Makefile.am
 
 %build
-ACLOCAL=aclocal-1.7 AUTOMAKE=automake-1.7 \
-    autoreconf --force --install
+autoreconf --force --install
 %configure2_5x --enable-shared
 %make
 
@@ -146,12 +151,12 @@ rm -Rf $RPM_BUILD_ROOT
 %defattr (- ,root,root)
 %_libdir/*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-, root, root)
 %_libdir/*.so
 %_libdir/*.la
 
-%files -n %libname-static-devel
+%files -n %sdevelname
 %defattr(-,root,root)
 %{_libdir}/lib*.a
 
