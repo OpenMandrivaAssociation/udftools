@@ -1,6 +1,7 @@
 sources:
-  "pktcdvd-hint.txt.bz2:"	1d8d13432bb5479f9359a39989d9121572cea0e1
-  "pktcdvd.html.bz2:"	203d7e355912e211ba83c590475d7a46bbe26441
-  "pktcdvd.init.d.bz2:"	9a6fcf7eeff724cc5a4a4ea6e2d58fe8173adc0a
-  "pktcdvd.sysconfig.bz2:"	e881aee683bdde1150f99f70fdb373c3b963c35d
-  "udftools-1.0.0b3cvs20040419.tar.bz2:"	5f07a020501e0cf490af70f6e5b33042e67107bc
+  pktcdvd-hint.txt.bz2: 1d8d13432bb5479f9359a39989d9121572cea0e1
+  pktcdvd.html.bz2: 203d7e355912e211ba83c590475d7a46bbe26441
+  pktcdvd.init.d.bz2: 9a6fcf7eeff724cc5a4a4ea6e2d58fe8173adc0a
+  pktcdvd.sysconfig.bz2: e881aee683bdde1150f99f70fdb373c3b963c35d
+  udftools-1.0.0b3cvs20040419.tar.bz2: 5f07a020501e0cf490af70f6e5b33042e67107bc
+---
