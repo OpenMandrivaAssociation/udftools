@@ -2,7 +2,7 @@ Summary:	UDF filesystem tools
 Name:		udftools
 Epoch:		1
 Version:	2.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Kernel and hardware
 URL:		https://github.com/pali/udftools
