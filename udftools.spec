@@ -7,6 +7,11 @@ License:	GPLv2+
 Group:		System/Kernel and hardware
 URL:		https://github.com/pali/udftools
 Source0:	https://github.com/pali/udftools/releases/download/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(readline)
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(udev)
